@@ -130,15 +130,20 @@ export function CandidatesBrowser() {
               {estados.length === 0 ? (
                 <option>Carregando estados…</option>
               ) : (
-                gruposRegiao.map((g) => (
-                  <optgroup key={g.chave} label={g.rotulo}>
-                    {g.estados.map((e) => (
-                      <option key={e.sigla} value={e.sigla}>
-                        {`${e.nome} (${e.sigla})`}
-                      </option>
-                    ))}
-                  </optgroup>
-                ))
+                <>
+                  {estados.some((e) => e.sigla === "BR") ? (
+                    <option value="BR">Brasil (todo o país)</option>
+                  ) : null}
+                  {gruposRegiao.map((g) => (
+                    <optgroup key={g.chave} label={g.rotulo}>
+                      {g.estados.map((e) => (
+                        <option key={e.sigla} value={e.sigla}>
+                          {`${e.nome} (${e.sigla})`}
+                        </option>
+                      ))}
+                    </optgroup>
+                  ))}
+                </>
               )}
             </select>
             <ChevronDown className="pointer-events-none absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />

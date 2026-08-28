@@ -21,14 +21,16 @@ export const TSE_HEADERS: Record<string, string> = {
 // Rótulos dos cargos que podem ser exibidos.
 // Os códigos são padronizados nacionalmente pelo TSE.
 export const CARGO_LABELS: Record<number, { nome: string; nomePlural: string }> = {
+  1: { nome: "Presidente", nomePlural: "Presidente" },
+  3: { nome: "Governador", nomePlural: "Governador" },
   5: { nome: "Senador", nomePlural: "Senador" },
   6: { nome: "Deputado Federal", nomePlural: "Deputado Federal" },
   7: { nome: "Deputado Estadual", nomePlural: "Deputado Estadual" },
 }
 
-// Ordem e conjunto de cargos disponíveis. Presidente/Vice e Governador/Vice
-// ficam desabilitados enquanto os dados desses cargos não estiverem estáveis no TSE.
-export const MAIN_CARGO_CODES = [5, 6, 7]
+// Ordem e conjunto de cargos disponíveis nas tabs.
+// Presidente é candidatura nacional (UF "BR"); os demais são por estado.
+export const MAIN_CARGO_CODES = [1, 3, 5, 6, 7]
 
 export function getCargoByCodigo(codigo: number): { codigo: number; nome: string } | undefined {
   const label = CARGO_LABELS[codigo]
