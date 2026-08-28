@@ -20,9 +20,9 @@ export default function HomePage() {
             </div>
           </div>
           <p className="mt-4 max-w-2xl text-pretty text-sm leading-relaxed text-primary-foreground/80">
-            Consulte candidaturas em todo o Brasil para Senador, Deputado Federal e Deputado
-            Estadual. Selecione o estado, o cargo e use os filtros de nome, número, partido ou
-            coligação. Dados oficiais do TSE.
+            Consulte candidaturas em todo o Brasil para Presidente, Governador, Senador, Deputado
+            Federal e Deputado Estadual. Selecione o estado (ou Brasil, para Presidente), o cargo
+            e use os filtros de nome, número, partido ou coligação. Dados oficiais do TSE.
           </p>
         </div>
       </header>
